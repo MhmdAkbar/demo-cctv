@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo CCTV Pintar</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 min-h-screen flex items-center justify-center">
+
+    <div class="w-full max-w-4xl px-4">
+        
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-slate-800">
+                Demo CCTV Pintar
+            </h1>
+            <p class="text-slate-500 mt-2">
+                Monitoring objek dan deteksi anomali secara real-time
+            </p>
+        </div>
+
+        <!-- Card Container -->
+        <div class="bg-white shadow-xl rounded-2xl p-6">
+
+            <!-- Video Wrapper -->
+            <div class="relative rounded-xl overflow-hidden border border-slate-200">
+                <video 
+                    id="webcam" 
+                    autoplay 
+                    muted 
+                    class="w-full h-auto object-cover bg-black">
+                </video>
+
+                <!-- Badge Live -->
+                <div class="absolute top-3 left-3 bg-red-600 text-white text-xs font-semibold px-3 py-1 rounded-full shadow">
+                    LIVE
+                </div>
+            </div>
+
+            <!-- Status -->
+            <div class="mt-6 text-center">
+                <div 
+                    id="status" 
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-100 text-slate-700 font-medium">
+                    ⏳ Memuat model AI, harap tunggu...
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer kecil -->
+        <div class="text-center text-xs text-slate-400 mt-6">
+            Sistem Monitoring CCTV • TensorFlow.js
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8.3/dist/teachablemachine-image.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
